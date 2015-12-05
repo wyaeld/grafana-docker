@@ -1,5 +1,10 @@
 FROM debian:jessie
 
+MAINTAINER Brad Murray <wyaeld@gmail.com> <brad.murray@datacom.co.nz>
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TERM xterm
+
 ENV GRAFANA_VERSION 2.5.0
 
 RUN apt-get update && \
@@ -20,4 +25,4 @@ EXPOSE 3000
 
 COPY ./run.sh /run.sh
 
-ENTRYPOINT ["/run.sh"]
+CMD ["/run.sh"]
